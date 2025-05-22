@@ -1,87 +1,91 @@
-Medieval Weapon Detection
+# Medieval Weapon Detection
+
 This project uses the YOLO (You Only Look Once) model to detect melee weapons in images. The model is trained to identify objects such as swords and sticks, and the provided Jupyter notebook demonstrates how to run inference using a pre-trained model.
-Table of Contents
 
-Project Overview
-Requirements
-Installation
-Usage
-File Structure
-Model Details
-Contributing
-License
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [Model Details](#model-details)
+- [Notes](#notes)
+- [Contributing](#contributing)
+- [License](#license)
 
-Project Overview
-The goal of this project is to detect melee weapons in images using a YOLO-based object detection model. The provided notebook (run.ipynb) loads a pre-trained model and performs inference on a specified image, saving the results with bounding boxes.
-Requirements
+## Project Overview
+The goal of this project is to detect melee weapons in images using a YOLO-based object detection model. The provided notebook (`run.ipynb`) loads a pre-trained model and performs inference on a specified image, saving the results with bounding boxes.
 
-Python 3.10+
-PyTorch
-Ultralytics YOLO
-Jupyter Notebook
+## Requirements
+- Python 3.10+
+- PyTorch
+- Ultralytics YOLO
+- Jupyter Notebook
 
-Installation
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/medieval-weapon-detection.git
+   cd medieval-weapon-detection
+   ```
 
-Clone the repository:
-```bash
-git clone https://github.com/CallMeGovos/WeaponDetection.git
-cd WeaponDetection
-```
+2. Create a virtual environment and activate it:
+   ```bash
+   python -m venv env
+   source env/bin/activate  # On Windows: env\Scripts\activate
+   ```
 
-Create a virtual environment and activate it:
-python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
+3. Install the required packages:
+   ```bash
+   pip install torch ultralytics jupyter
+   ```
 
+## Usage
+1. Ensure you have a pre-trained model file (e.g., `best.pt`) in the specified path (e.g., `G:\Project\Medival_detector\runs\detect\sword_yolo11s\weights\best.pt`).
+2. Update the `source` variable in `run.ipynb` with the path to your input image.
+3. Run the Jupyter notebook:
+   ```bash
+   jupyter notebook run.ipynb
+   ```
+4. The model will process the input image, detect melee weapons, and save the results with bounding boxes in the `runs/detect/predict*` directory.
 
-Install the required packages:
-pip install torch ultralytics jupyter
-
-
-
-Usage
-
-Ensure you have a pre-trained model file (e.g., best.pt) in the specified path (e.g., G:\Project\Medival_detector\runs\detect\sword_yolo11s\weights\best.pt).
-Update the source variable in run.ipynb with the path to your input image.
-Run the Jupyter notebook:jupyter notebook run.ipynb
-
-
-The model will process the input image, detect melee weapons, and save the results with bounding boxes in the runs/detect/predict* directory.
-
-Example code snippet from run.ipynb:
+Example code snippet from `run.ipynb`:
+```python
 model = YOLO(model_path)
 results = model(source=source, conf=0.25, save=True)
+```
 
-File Structure
+## File Structure
+```
 medieval-weapon-detection/
-├── runs/
-│   └── detect/
-│       └── sword_yolo11s/
-│           └── weights/
-│               └── best.pt
-├── notebooks/
-│   └── run.ipynb
+├── runs/detect/sword_yolo11s/weights/best.pt
+├── notebooks/run.ipynb
 ├── README.md
+├── LICENSE
+```
 
+- `runs/detect/sword_yolo11s/weights/best.pt`: Pre-trained YOLO model weights.
+- `notebooks/run.ipynb`: Jupyter notebook for running inference.
+- `README.md`: Project documentation.
+- `LICENSE`: MIT License file.
 
-runs/detect/sword_yolo11s/weights/best.pt: Pre-trained YOLO model weights.
-notebooks/run.ipynb: Jupyter notebook for running inference.
-README.md: Project documentation.
+## Model Details
+- **Model**: YOLO (version: yolo11s)
+- **Classes**: Trained to detect melee weapons (e.g., sticks, swords)
+- **Confidence Threshold**: 0.25 (adjustable in `run.ipynb`)
+- **Inference Speed**: ~137.9ms per image (on 416x640 resolution)
 
-Model Details
+## Notes
+- The pre-trained model (`best.pt`) and dataset are not included in this repository due to licensing restrictions.
+- This project uses the Ultralytics YOLO framework, which is licensed under AGPL-3.0. Ensure compliance with its license terms when using the model.
 
-Model: YOLO (version: yolo11s)
-Classes: Trained to detect melee weapons (e.g., sticks, swords)
-Confidence Threshold: 0.25 (adjustable in run.ipynb)
-Inference Speed: ~137.9ms per image (on 416x640 resolution)
-
-Contributing
+## Contributing
 Contributions are welcome! Please follow these steps:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m "Add feature"`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -m "Add feature").
-Push to the branch (git push origin feature-branch).
-Open a Pull Request.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
