@@ -23,31 +23,31 @@ The goal of this project is to detect melee weapons in images using a YOLO-based
 - Jupyter Notebook
 
 ## Installation
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
    git clone https://github.com/CallMeGovos/WeaponDetection.git
    cd WeaponDetection
    ```
 
-2. Create a virtual environment and activate it:
+2. **Create a virtual environment and activate it**:
    ```bash
    python -m venv env
    source env/bin/activate  # On Windows: env\Scripts\activate
    ```
 
-3. Install the required packages:
+3. **Install the required packages**:
    ```bash
    pip install torch ultralytics jupyter
    ```
 
 ## Usage
-1. Ensure you have a pre-trained model file (e.g., `best.pt`) in the specified path (e.g., `G:\Project\Medival_detector\runs\detect\sword_yolo11s\weights\best.pt`).
-2. Update the `source` variable in `run.ipynb` with the path to your input image.
-3. Run the Jupyter notebook:
+1. **Ensure you have a pre-trained model file (e.g., `best.pt`) in the specified path (e.g., `G:\Project\Medival_detector\runs\detect\sword_yolo11s\weights\best.pt`)**.
+2. **Update the `source` variable in `run.ipynb` with the path to your input image**.
+3. **Run the Jupyter notebook**:
    ```bash
    jupyter notebook run.ipynb
    ```
-4. The model will process the input image, detect melee weapons, and save the results with bounding boxes in the `runs/detect/predict*` directory.
+4. **The model will process the input image, detect melee weapons, and save the results with bounding boxes in the `runs/detect/predict*` directory**.
 
 Example code snippet from `run.ipynb`:
 ```python
