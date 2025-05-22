@@ -23,9 +23,10 @@ Jupyter Notebook
 Installation
 
 Clone the repository:
+```bash
 git clone https://github.com/CallMeGovos/WeaponDetection.git
 cd WeaponDetection
-
+```
 
 Create a virtual environment and activate it:
 python -m venv env
