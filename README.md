@@ -40,6 +40,18 @@ The goal of this project is to detect melee weapons in images using a YOLO-based
    pip install torch ultralytics jupyter
    ```
 
+## Training the Model
+The model was trained using the following command:
+```bash
+yolo task=detect mode=train model=yolo11s.pt data=data/weapon2.v2i.yolov12/data.yaml epochs=50 batch=16 name=sword_yolo11n
+```
+- Model: Pre-trained YOLO11s (yolo11s.pt)
+- Dataset: Custom dataset specified in data/weapon2.v2i.yolov12/data.yaml
+- Epochs: 50
+- Batch Size: 16
+- Output: Trained model saved as best.pt in runs/detect/sword_yolo11n/weights/
+To train your own model, prepare a dataset in YOLO format and run the above command with your dataset configuration.
+
 ## Usage
 1. **Ensure you have a pre-trained model file (e.g., `best.pt`) in the specified path (e.g., `G:\Project\Medival_detector\runs\detect\sword_yolo11s\weights\best.pt`)**.
 2. **Update the `source` variable in `run.ipynb` with the path to your input image**.
