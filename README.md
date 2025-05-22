@@ -25,8 +25,8 @@ The goal of this project is to detect melee weapons in images using a YOLO-based
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/medieval-weapon-detection.git
-   cd medieval-weapon-detection
+   git clone https://github.com/CallMeGovos/WeaponDetection.git
+   cd WeaponDetection
    ```
 
 2. Create a virtual environment and activate it:
