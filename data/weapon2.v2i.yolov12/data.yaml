@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['stick']
+
+roboflow:
+  workspace: weapon-mre2t
+  project: weapon2-2dwsr
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/weapon-mre2t/weapon2-2dwsr/dataset/2
