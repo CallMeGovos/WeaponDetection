@@ -6,6 +6,7 @@ This project uses the YOLO (You Only Look Once) model to detect melee weapons in
 - [Project Overview](#project-overview)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Training the Model](#training-the-model)
 - [Usage](#usage)
 - [File Structure](#file-structure)
 - [Model Details](#model-details)
